@@ -1,218 +1,69 @@
-# Beginning Node.js, Express and MongoDB Development
+# [Start Bootstrap - Clean Blog](https://startbootstrap.com/theme/clean-blog/)
 
-by Greg Lim, published by Greg Lim July 2019.
+[Clean Blog](https://startbootstrap.com/theme/clean-blog/) is a stylish, responsive blog theme for [Bootstrap](https://getbootstrap.com/) created by [Start Bootstrap](https://startbootstrap.com/). This theme features a blog homepage, about page, contact page, and an example post page along with a working PHP contact form.
 
-Started reading/studying this book on December 14, 2020.
+## Preview
 
-This repo contains the exercises and examples of the book.
+[![Clean Blog Preview](https://assets.startbootstrap.com/img/screenshots/themes/clean-blog.png)](https://startbootstrap.github.io/startbootstrap-clean-blog/)
 
-## Chapter 01: Introduction
+**[View Live Preview](https://startbootstrap.github.io/startbootstrap-clean-blog/)**
 
-December 14, 2020
+## Status
 
-## Chapter 02: Introduction to NPM & Express
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/StartBootstrap/startbootstrap-clean-blog/master/LICENSE)
+[![npm version](https://img.shields.io/npm/v/startbootstrap-clean-blog.svg)](https://www.npmjs.com/package/startbootstrap-clean-blog)
+[![Build Status](https://travis-ci.org/StartBootstrap/startbootstrap-clean-blog.svg?branch=master)](https://travis-ci.org/StartBootstrap/startbootstrap-clean-blog)
+[![dependencies Status](https://david-dm.org/StartBootstrap/startbootstrap-clean-blog/status.svg)](https://david-dm.org/StartBootstrap/startbootstrap-clean-blog)
+[![devDependencies Status](https://david-dm.org/StartBootstrap/startbootstrap-clean-blog/dev-status.svg)](https://david-dm.org/StartBootstrap/startbootstrap-clean-blog?type=dev)
 
-December 16, 2020
+## Download and Installation
 
-Similar to chapter 1, but now we created a web server with Express.
+To begin using this template, choose one of the following options to get started:
 
-Had to add extra code to make the example work, because of an error:
+* [Download the latest release on Start Bootstrap](https://startbootstrap.com/theme/clean-blog/)
+* Install via npm: `npm i startbootstrap-clean-blog`
+* Clone the repo: `git clone https://github.com/StartBootstrap/startbootstrap-clean-blog.git`
+* [Fork, Clone, or Download on GitHub](https://github.com/StartBootstrap/startbootstrap-clean-blog)
 
-```
-The resource from "http://localhost:3000/css/index.css" was blocked due to MIME type mismatch (X-Content-Type-Options: nosniff)
-The resource from "http://localhost:3000/js/index.js" was blocked due to MIME type mismatch (X-Content-Type-Options: nosniff)
-```
+## Usage
 
-```javascript
-app.use(express.static(__dirname + "/public", {
-    index: false, 
-    immutable: true, 
-    cacheControl: true,
-    maxAge: "30d"
-}));
-```
+### Basic Usage
 
-## Chapter 03: Beginning Our Blog Project
+After downloading, simply edit the HTML and CSS files included with the template in your favorite text editor to make changes. These are the only files you need to worry about, you can ignore everything else! To preview the changes you make to the code, you can open the `index.html` file in your web browser.
 
-December 17, 2020
+### Advanced Usage
 
-After installing theme and node packages, node found 4 low severity vulnerabilities.
-Used `npm audit fix`, which took care of 3 of them. For the 4th I found conflicting solutions via Google, but as it is a low severity vulnerability I decided to leave it as it is.
+After installation, run `npm install` and then run `npm start` which will open up a preview of the template in your default browser, watch for changes to core template files, and live reload the browser when changes are saved. You can view the `gulpfile.js` to see which tasks are included with the dev environment.
 
-I have no idea, why the problem wasn't resolved by using `npm audit fix` as I am still new to server-side JS. Is it because I use more recent versions than the ones used in the book?
+#### Gulp Tasks
 
-- node: v12.18.3 vs v10.15.3
-- npm:  v6.14.9 vs v6.4.1
-- Clean Blog theme: updated a month ago, while the book was published a year and a half ago
+* `gulp` the default task that builds everything
+* `gulp watch` browserSync opens the project in your default browser and live reloads when changes are made
+* `gulp css` compiles SCSS files into CSS and minifies the compiled CSS
+* `gulp js` minifies the themes JS file
+* `gulp vendor` copies dependencies from node_modules to the vendor directory
 
-Still, I got everything working.
+You must have npm installed globally in order to use this build environment.
 
-## Chapter 04: Templating Engines
+## Bugs and Issues
 
-December 19, 2020
+Have a bug or an issue with this template? [Open a new issue](https://github.com/StartBootstrap/startbootstrap-clean-blog/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](https://startbootstrap.com/theme/clean-blog/).
 
-Copied contents of directory ch03 into directory ch04. 
-When I tried to run the app I got an error, which forced me to delete and reinstall nodemon.
+## About
 
-Four chapters in and I feel I already have a better understanding of Node.js than after 3 Zenva courses.
+Start Bootstrap is an open source library of free Bootstrap templates and themes. All of the free templates and themes on Start Bootstrap are released under the MIT license, which means you can use them for any purpose, even for commercial projects.
 
-## Chapter 05: Introduction to MongoDB
+* <https://startbootstrap.com>
+* <https://twitter.com/SBootstrap>
 
-December 21, 2020
+Start Bootstrap was created by and is maintained by **[David Miller](https://davidmiller.io/)**, Owner of [Blackrock Digital](https://startbootstrap.io/).
 
-Aha! The errors I get when copying the contents of the directory of a previous chapter, can be avoided when I exclude the node_modules directory.
+* <https://davidmiller.io>
+* <https://twitter.com/davidmillerhere>
+* <https://github.com/davidtmiller>
 
-After everything was copied in `ch05`, execute the following commands at the command line
+Start Bootstrap is based on the [Bootstrap](https://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
 
-```bash
-npm init
-npm install
-npm audit fix
-```
+## Copyright and License
 
-Found some typos in the code and got a warning when executing the `test.js` file.
-
-```
-DeprecationWarning: current Server Discovery and Monitoring engine is deprecated, and will be removed in a future version. To use the new Server Discover and Monitoring engine, pass option { useUnifiedTopology: true } to the MongoClient constructor
-```
-
-## Chapter 06: Applying MongoDB to Our Project
-
-December 22, 2020
-
-In this chapter you learn how to post new articles, display a list with all the articles and display a single article.
-Two thirds into the chapter, the author suggests you try out adding a functioning search bar to the site. Wait! What?
-
-## Chapter 07: Uploading an Image with Express
-
-December 23, 2020
-
-I have the impression that there is less explaining of the code.
-
-## Chapter 08: Introduction to Express Middleware
-
-December 23, 2020
-
-Had to modify the code from the book
-
-```javascript
-const validateMiddleWare = (req,res,next)=>{    
-    if(req.files == null || req.body.title == null || req.body.title == null){        
-        return res.redirect('/posts/new')
-    }    
-    next()
-}
-```
-
-to the following in order to get it to work:
-
-```javascript
-const validateMiddleWare = (req, res, next) => {
-    if (req.files == null || req.body.title.trim() == '' || req.body.body.trim() == '') {
-        return res.redirect('/posts/new');
-    }
-    next()
-};
-```
-
-Because even when the form fields title and body are empty, they are not null.
-
-## Chapter 09: Refactoring to MVC
-
-December 24, 2020
-
-The faulty code from the previous chapter appeared again.
-
-## Chapter 10: User Registration
-
-December 27, 2020
-
-Received the following warning
-
-```
-(node:4789) DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead.
-```
-
-It is just a warning, but found a solution on StackOverflow: add `useCreateIndex: true` and `useNewUrlParser: true` to the `mongoose.connect` function in `index.js`.
-
-```javascript
-mongoose.connect('mongodb://localhost/my_database', { 
-    useCreateIndex: true,
-    useNewUrlParser: true,
-    useUnifiedTopology: true, 
-    useNewUrlParser: true 
-});
-
-```
-
-## Chapter 11: User Authentication with Express Sessions
-
-December 27, 2020
-
-Author referred to a non-existing file on page 107. The file `homePage.js` doesn't exist, the code that needs modifying is in the file `controllers/home.js`.
-
-Encountered another deprectation warning:
-
-```
-express-session deprecated undefined resave option; provide resave option index.js:64:9
-express-session deprecated undefined saveUninitialized option; provide saveUninitialized option index.js:64:9
-```
-
-So I added the keys `resave` and `saveUninitialized` to the the function in the `index.js` file:
-
-```javascript
-app.use(expressSession({
-    resave: true,
-    saveUninitialized: true,
-    secret: 'keyboard cat'
-}));
-```
-
-Sometimes small pieces of code samples need to be added to a file, without telling where exactly. At the end of the file, after certain statementents and before others? Already wasted some time figuring that out!
-
-## Chapter 12: Showing Validation Errors
-
-December 28, 2020
-
-The backticks in the error messages weren't properly escaped, so I had to be creative.
-
-```javascript
-<li class="list-group-item list-group-item-danger"><%- errors[i].replace(/`/g, '&apos;') %></li>
-```
-
-## Chapter 13: Relating Posts Collection with Users Collection
-
-December 29, 2020
-
-
-## Chapter 14: Adding a WYSIWYG Editor
-
-December 29, 2020
-
-Not too pleased with this chapter. The Summernote editor had a higher version number than the one in the book, and when I used that version with the code from the book I ended up with an infinite loop of forms inside forms. Copying the head element from the book (referring to an older version of Summernote) gave me a mostly working editor, but the dropdowns didn't work and now the page loads two different versions of jQuery, Popper.js and Bootstrap.js. Removing one of those versions and it stops working. I decided to leave it at that.
-
-I don't believe the author thouroughly tested this code. Yes, he did mention that we now need to include the unescaped text `<%- %>` (vs previously the escaped text `<%= %>`) from the blog post into the template. However, it doesn't stop there. He uses the text also to display the description or summary in the list of articles on the homepage. My solution was to cut it short and *unescape* it. His solution was to simply remove it. My solution:
-
-```javascript
-<%- blogposts[i].body.substring(0, 100) %>  ...
-```
-
-## Chapter 15: Using MongoDB Atlas
-
-December 30, 2020
-
-## Chapter 16: Deploying Web Apps on Heroku
-
-Error on page 147, correct the contents of the `Procfile`:
-
-WRONG:
-
-```
-web: node app.js
-```
-
-CORRECT
-
-```
-web: node index.js
-```
+Copyright 2013-2020 Start Bootstrap LLC. Code released under the [MIT](https://github.com/StartBootstrap/startbootstrap-clean-blog/blob/gh-pages/LICENSE) license.
